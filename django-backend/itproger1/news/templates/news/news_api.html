@@ -1,0 +1,12 @@
+{% extends 'news/base.html' %} {% load static %} {% block head %}
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+{% endblock head %} {% block content %} {% verbatim %}
+<div class="container" id="news_api_content">
+  <a href="#">Link</a>
+</div>
+{% endverbatim %}
+<script src="{% static 'main/js/news_api.js' %}"></script>
+
+{% endblock content %}

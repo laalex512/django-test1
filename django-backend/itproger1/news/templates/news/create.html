@@ -1,0 +1,42 @@
+{% extends 'news/base.html' %} {% block content %}
+<h1>{{ title }}</h1>
+<form method="post" class="create-form">
+  {% csrf_token %}
+
+  <div class="form-floating mb-3">
+    {{ form.title }}
+    <label for="title_input">Title</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    {{ form.announce }}
+    <label for="announce_input">Announce</label>
+  </div>
+
+  <div class="form-floating">
+    {{ form.content }}
+    <label for="floatingTextarea2">Text of Article</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    {{ form.date_published }}
+    <label for="date_input">Date published</label>
+  </div>
+
+  <label for="exampleDataList" class="form-label">Choice Author</label>
+
+  <input
+    class="form-control"
+    list="datalistOptions"
+    id="exampleDataList"
+    placeholder="Type to search..."
+  />
+  <datalist id="datalistOptions">
+    {% for user in users %}
+    <option value="{{ user.username }}">{% endfor %}</option>
+  </datalist>
+
+  <button type="submit" class="btn btn-warning">Create Article</button>
+</form>
+<span>{{ message }}</span>
+{% endblock %}

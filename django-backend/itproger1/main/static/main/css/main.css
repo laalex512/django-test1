@@ -1,0 +1,79 @@
+body {
+  background: #27292c;
+}
+
+aside {
+  float: left;
+  background: black;
+  width: 15%;
+  padding: 2.5%;
+  height: 100vh;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside ul li,
+aside ul a {
+  color: #fff;
+  margin-bottom: 20px;
+  text-decoration: none;
+  transition: transform 0.5s ease;
+}
+
+aside ul li:hover,
+aside ul a:hover {
+  color: blue;
+  transform: scale(1.05);
+}
+
+main {
+  float: left;
+  padding: 50px 30px;
+  width: 75%;
+  color: white;
+}
+
+.alert-primary {
+  float: left;
+  clear: both;
+  width: 400px;
+  margin: 20px;
+  transition: background-color 0.3s;
+}
+
+.alert-primary:hover {
+  background-color: grey;
+}
+
+.link-container {
+  position: relative;
+  display: inline-block;
+}
+
+.link-container a {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.date_published {
+  font-size: 12px;
+  text-align: right;
+}
+
+.btn-info {
+  font-size: 12px;
+}
+
+.btn-warning {
+  margin-left: 400px;
+  margin-top: 30px;
+}
+
+.create-form div {
+  color: black;
+}

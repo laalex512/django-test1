@@ -1,0 +1,20 @@
+{% extends 'news/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+{% for el in news %}
+<div class="link-container">
+    <a href="{% url 'news_single' el.id %}">
+        <div class="alert alert-primary">
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.announce }}</p>
+            <p class="date_published">{{ el.date_published }}</p>
+        </div>
+    </a>
+</div>
+{% endfor %}
+{% endblock %}
