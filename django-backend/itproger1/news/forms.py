@@ -1,5 +1,6 @@
 from .models import Article
 from django.forms import ModelForm, TextInput, DateInput, Textarea
+from datetime import datetime
 
 
 class ArticleForm(ModelForm):
@@ -35,6 +36,7 @@ class ArticleForm(ModelForm):
                     "class": "form-control",
                     "id": "date_input",
                     "placeholder": "Date published",
+                    "default": datetime.now().date(),
                 }
             ),
         }

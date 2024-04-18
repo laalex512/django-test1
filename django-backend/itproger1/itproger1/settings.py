@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+from . import local_vars
 
 from pathlib import Path
 
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r!fm6xh-$_s%@1u5$&by5y0+xav1ls$)e8c43p^o7bz34=r!xg'
+SECRET_KEY = local_vars.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -77,8 +78,12 @@ WSGI_APPLICATION = 'itproger1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': local_vars.PG_NAME,
+		'USER': local_vars.PG_USER,
+		'PASSWORD': local_vars.PG_PASSWORD,
+		'HOST': local_vars.PG_HOST,
+		'PORT': '5432',
     }
 }
 
